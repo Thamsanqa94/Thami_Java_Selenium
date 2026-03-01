@@ -2,8 +2,10 @@ package Basic;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
@@ -46,7 +48,7 @@ public class LoginToAutomationPage {
 
 
         // /html/body/div/div/nav/div[1]/div[3]/div/div/button[1]/span[2]
-        /* wait.until(ExpectedConditions.elementToBeClickable(
+         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("/html/body/div/div/nav/div[1]/div[3]/div/div/button[1]/span[2]")
         )).click();
         // Profile menu
@@ -58,7 +60,7 @@ public class LoginToAutomationPage {
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.xpath("/html/body/div/div/nav/div[1]/div[2]/div[1]/div/button[2]/span[2]")
         )).click();
-          /*
+
         // PASSWORD TAB  ❗ THIS WAS FAILING
         wait.until(ExpectedConditions.elementToBeClickable(
                 By.id("tab-btn-password")
@@ -82,7 +84,7 @@ public class LoginToAutomationPage {
 
         driver.findElement(By.xpath("/html/body/div/div/main/section/div[3]/div/form/div[1]/select[2]")).click();
 
-             */
+
 
 
     }
