@@ -2,17 +2,25 @@ package Test;
 
 import Base.BaseTest;
 import Pages.LoginPage;
+import Utilities.JsonDataReader;
+import com.fasterxml.jackson.databind.JsonNode;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 
 public class LoginTest extends BaseTest {
 
-    @Test
-    public void LoginWithValidInformation() {
+    @DataProvider(name = "loginData")
+    public Object[][] loginData() {
+        return JsonDataReader.getJsonData("testdata/login_data.json");
+    }
+
+    @Test(dataProvider = "loginData")
+    public void LoginWithValidInformation(JsonNode data) {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.clickLoginButton();
-        loginPage.enterEmail("Xoxoshololo@gmail.com");
-        loginPage.enterPassword("Agric123@");
+        loginPage.enterEmail(data.get("email").asText());
+        loginPage.enterPassword(data.get("password").asText());
         loginPage.clickSubmitButton();
     }
 }
