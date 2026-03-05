@@ -32,6 +32,7 @@ public class BrowserFactory {
     @Test
     public void RunBrowser()    {
         startBrowser("chrome", "https://ndosisimplifiedautomation.vercel.app/"); // Example usage of the startBrowser method
+
     }
 }
 
