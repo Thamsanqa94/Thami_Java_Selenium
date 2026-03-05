@@ -26,6 +26,13 @@ public class LoginPage {
     @FindBy(id = "login-submit")
     WebElement submitButton;
 
+    @FindBy(xpath = "/html/body/div/div/nav/div[1]/div[3]/div/button")
+    WebElement profileButton;
+
+    @FindBy(xpath = "/html/body/div/div/nav/div[1]/div[2]/div[1]/div/a[3]")
+    WebElement logoutButton;
+
+
     public void clickLoginButton() {
         loginButton.click();
     }
@@ -40,6 +47,7 @@ public class LoginPage {
     public void clickSubmitButton() {
         submitButton.click();
     }
+
 
 
 

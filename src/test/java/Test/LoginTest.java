@@ -12,7 +12,7 @@ public class LoginTest  extends BaseTest {
 
    @DataProvider(name = "loginData")
    public Object[][] loginData() {
-       return JsonDataReader.getJsonData("testdata/login_data.json");
+       return JsonDataReader.getJsonData("testdata/Login_Data.json");
    }
 
     @Test(dataProvider = "loginData")
@@ -22,5 +22,6 @@ public class LoginTest  extends BaseTest {
         loginPage.enterEmail(data.get("email").asText());
         loginPage.enterPassword(data.get("password").asText());
         loginPage.clickSubmitButton();
+
     }
 }
