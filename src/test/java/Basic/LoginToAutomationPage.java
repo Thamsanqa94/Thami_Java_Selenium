@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
+import javax.xml.crypto.dom.DOMCryptoContext;
 import java.time.Duration;
 import java.util.List;
 
@@ -106,6 +107,26 @@ public class LoginToAutomationPage extends BaseTest {
 
         // Click next button
         driver.findElement(By.id("inventory-next-btn")).click();
+
+        driver.findElement(By.id("shipping-express")).click();
+        driver.findElement(By.id("warranty-1yr")).click();
+        //driver.findElement(By.id("discount-code"))
+        driver.findElement(By.id("discount-code")).sendKeys("SAVE10");
+        driver.findElement(By.id("apply-discount-btn")).click();
+        driver.findElement(By.id("purchase-device-btn")).click();
+        Thread.sleep(2000);
+        driver.findElement(By.id("view-history-btn")).click();
+        Thread.sleep(2000);
+
+        List<WebElement> invoiceButtons = driver.findElements(By.cssSelector("button[id^='view-invoice-INV-']"));
+
+        for (WebElement button : invoiceButtons) {
+            System.out.println("Found: " + button.getAttribute("view-invoice-INV-1772898998985"));
+            // Example: click the first one
+            button.click();
+            break;
+        }
+
     }
 
 }

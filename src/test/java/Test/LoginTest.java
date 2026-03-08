@@ -22,6 +22,21 @@ public class LoginTest  extends BaseTest {
         loginPage.enterEmail(data.get("email").asText());
         loginPage.enterPassword(data.get("password").asText());
         loginPage.clickSubmitButton();
-
+        loginPage.openDropdown();
+        loginPage.clickLearningMaterials();
+        loginPage.clickNextOnLearningMaterials();
+        loginPage.selectDeviceType("Phone");
+        loginPage.selectBrand("Apple");
+        loginPage.chooseStorage();
+        loginPage.selectColor("Blue");
+        loginPage.enterQuantity("2");
+        loginPage.enterAddress("Oak Avenue Ferndale");
+        loginPage.clickNextInventory();
+        loginPage.chooseShippingExpress();
+        loginPage.chooseWarranty();
+        loginPage.applyDiscount("SAVE10");
+        loginPage.purchaseDevice();
+        loginPage.viewHistory();
+        loginPage.clickFirstInvoice();
     }
 }
