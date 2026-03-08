@@ -106,6 +106,9 @@ public class LoginPage {
 
     public void clickSubmitButton() {
         submitButton.click();
+        // Wait for post-login element (profile button) to confirm successful login
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+        wait.until(ExpectedConditions.elementToBeClickable(profileButton));
     }
 
     public void openDropdown() {
